@@ -1,0 +1,177 @@
+﻿/* ===================================================================
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1200px) {
+  .detail-layout {
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 1024px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-sidebar {
+    order: -1;
+  }
+
+  .sticky-booking-card {
+    position: static;
+  }
+
+  .detail-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .dashboard-content {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-search-bar {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .hero-search-input-group {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-search-input {
+    width: 100%;
+  }
+
+  .hero-search-select {
+    width: 100%;
+  }
+
+  .hero-search-btn {
+    width: 100%;
+  }
+
+  .filter-panel {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .type-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenity-toggles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    display: none;
+  }
+
+  .dashboard-content {
+    margin-left: 0;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .dashboard-header-row {
+    flex-direction: column;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-mobile-toggle {
+    display: flex;
+  }
+
+  .navbar-mobile-menu {
+    display: flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .hero-section {
+    min-height: 420px;
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .detail-amenities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .my-properties-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .my-properties-search {
+    max-width: 100%;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .detail-title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+
+/* ─── Toast Overrides ─── */
+.Toastify__toast {
+  font-family: var(--font-family) !important;
+  border-radius: var(--radius-md) !important;
+}
+

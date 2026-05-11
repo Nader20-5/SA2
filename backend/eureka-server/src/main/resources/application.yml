@@ -1,0 +1,9 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: false # ben2olo enta el server msh htestgl nfsk 3nd registry tani
+    fetch-registry: false #  my2ra4 el registry bta3 a7d l2no elwa7id

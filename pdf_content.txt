@@ -1,0 +1,62 @@
+🧩Project Architecture Requirements 
+1. Microservices 
+ 
+○ The application must consist of at least three independent backend services. 
+ 
+○ Each service must run in its own Docker container. 
+ 
+○ Services must communicate asynchronously using Apache Kafka. 
+ 
+○ Services may share a database or use separate databases, based on your 
+design choice (monolithic DB vs decentralized DB is acceptable). 
+ 
+2. Example Use Cases (You can create your own) 
+ 
+○ E-commerce (User Service, Order Service, Product Service) 
+ 
+○ Hotel Booking (Customer Service, Booking Service, Payment Service) 
+ 
+○ Event Ticketing (User Service, Ticket Service, Notification Service) 
+ 
+ 
+🧱 Technical Requirements 
+1. Backend 
+ 
+○ You may use any backend technology, such as: 
+ 
+■ Node.js (Express/NestJS) 
+ 
+■ ASP.NET Core 
+ 
+■ Python (FastAPI, Flask) 
+ 
+■ Java (Spring Boot) 
+ 
+■ Go, PHP, Ruby, etc. 
+ 
+○ Each service should expose its own REST API. 
+ 2. Kafka 
+ 
+○ Use Kafka to publish and consume events between services. 
+ 
+○ At least two meaningful events must flow between services (e.g., 
+OrderPlaced, UserRegistered, ProductOutOfStock). 
+ 
+3. Docker 
+ 
+○ All services must be containerized using Docker. 
+ 
+○ Provide a docker-compose.yml to run the full system, including Kafka and any 
+databases. 
+ 
+4. Frontend (Optional but Recommended) 
+ 
+○ You may use any frontend technology: 
+ 
+■ React, Angular, Vue.js 
+ 
+■ Or even server-rendered pages via Razor (ASP.NET), EJS, etc. 
+ 
+○ The frontend should interact with the backend services via API Gateway or 
+direct REST calls to the services. 
+ 

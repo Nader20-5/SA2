@@ -1,0 +1,46 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - name: JwtAuthenticationFilter
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/auth/**, /api/admin/**, /api/users/**
+        - id: user-uploads
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/uploads/avatars/**
+        - id: property-service
+          uri: lb://PROPERTY-SERVICE
+          predicates:
+            - Path=/api/properties/**, /api/reviews/**, /api/favorites/**
+        - id: property-uploads
+          uri: lb://PROPERTY-SERVICE
+          predicates:
+            - Path=/uploads/**
+        - id: visit-service
+          uri: lb://VISIT-SERVICE
+          predicates:
+            - Path=/api/visits/**
+        - id: rental-service
+          uri: lb://RENTAL-SERVICE
+          predicates:
+            - Path=/api/rentals/**, /api/Document/**
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+  public-paths: /api/auth/register,/api/auth/login,/api/properties,/api/reviews/property/**,/uploads/**
